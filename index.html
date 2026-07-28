@@ -190,22 +190,6 @@
             background-color: #0369a1;
         }
 
-        .creator-link {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        .creator-link a {
-            color: #64748b;
-            font-size: 0.8rem;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-
-        .creator-link a:hover {
-            color: #0284c7;
-        }
-
         /* =========================================
            GALERÍA Y VISTA DE ÁLBUMES
            ========================================= */
@@ -232,7 +216,6 @@
             gap: 30px;
         }
 
-        /* Tarjeta Elegante de Álbum */
         .album-card {
             background-color: #ffffff;
             border-radius: 16px;
@@ -283,9 +266,6 @@
             line-height: 1.5;
         }
 
-        /* =========================================
-           VISTA INTERNA DEL ÁLBUM (DENTRO DE LA PÁGINA)
-           ========================================= */
         .album-view {
             display: none;
             background-color: #ffffff;
@@ -339,7 +319,6 @@
             color: #64748b;
         }
 
-        /* Rejilla de fotos dentro del álbum */
         .photos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -387,7 +366,7 @@
 </head>
 <body>
 
-    <!-- Encabezado Limpio sin textos innecesarios -->
+    <!-- Encabezado -->
     <header class="hero-header">
         <div class="overlay">
             <nav class="navbar">
@@ -405,11 +384,11 @@
         </div>
     </header>
 
-    <!-- PANTALLA 1: Bloqueo de Contraseña -->
+    <!-- PANTALLA DE ACCESO POR CONTRASEÑA -->
     <section id="loginSection" class="login-section">
         <div class="login-card">
             <h2>Acceso Privado</h2>
-            <p class="login-desc">Ingresa la contraseña para ingresar.</p>
+            <p class="login-desc">Ingresa la contraseña para ver los álbumes.</p>
 
             <form id="accessForm">
                 <div class="input-group">
@@ -422,97 +401,81 @@
                 </div>
 
                 <button type="submit" class="btn-submit">Ingresar</button>
-
-                <p class="creator-link">
-                    <a onclick="saltarClave()">Entrar directamente (Modo Creador)</a>
-                </p>
             </form>
         </div>
     </section>
 
-    <!-- PANTALLA 2: Contenedor Principal -->
+    <!-- CONTENEDOR PRINCIPAL (Oculto hasta ingresar la contraseña) -->
     <main id="contentContainer" class="content-container">
 
-        <!-- ============================================================
-             SECCIÓN 1: MEMORIES
-             ============================================================ -->
+        <!-- SECCIÓN 1: MEMORIES -->
         <section id="tabMemories" class="tab-content active">
-            
-            <!-- Vista 1A: Rejilla de Álbumes en Memories -->
             <div id="gridMemories" class="albums-grid">
                 
-                <!-- ÁLBUM DE EJEMPLO -->
+                <!-- ÁLBUM 1 -->
                 <article class="album-card" onclick="openAlbum('albumMemories1', 'gridMemories')">
                     <div class="album-cover-wrapper">
-                        <img src="https://i.postimg.cc/fRGB2Fn0/Whats-App-Image-2026-07-27-at-5-50-59-PM.jpg" class="album-cover" alt="Portada">
+                        <img src="https://i.postimg.cc/fRGB2Fn0/Whats-App-Image-2026-07-27-at-5-50-59-PM.jpg" class="album-cover" alt="Bienvenida Generación XII">
                     </div>
                     <div class="album-info">
                         <h3 class="album-title">Bienvenida Generación XII</h3>
-                        <p class="album-desc">Fotografías del evento inaugural y bienvenida oficial.</p>
+                        <p class="album-desc">Fotografías del evento de inauguración e integración inicial del grupo.</p>
                     </div>
                 </article>
 
-                <!-- AQUÍ PUEDES COPIAR Y PEGAR MÁS ÁLBUMES PARA MEMORIES -->
-
             </div>
 
-            <!-- Vista 1B: Contenido Integrado del Álbum (Se despliega fluido) -->
+            <!-- Vista Interna del Álbum 1 -->
             <div id="albumMemories1" class="album-view">
                 <button class="btn-back" onclick="closeAlbum('albumMemories1', 'gridMemories')">← Volver a Álbumes</button>
                 <div class="album-view-header">
                     <h2 class="album-view-title">Bienvenida Generación XII</h2>
-                    <p class="album-view-desc">Registro fotográfico completo del evento inicial.</p>
+                    <p class="album-view-desc">Colección de fotos del evento inaugural.</p>
                 </div>
                 <div class="photos-grid">
                     <div class="photo-card">
-                        <img src="https://i.postimg.cc/fRGB2Fn0/Whats-App-Image-2026-07-27-at-5-50-59-PM.jpg" alt="Foto">
+                        <img src="https://i.postimg.cc/fRGB2Fn0/Whats-App-Image-2026-07-27-at-5-50-59-PM.jpg" alt="Foto del evento">
                         <div class="photo-info">
-                            <p class="photo-caption">Momento especial del inicio de la sesión.</p>
+                            <p class="photo-caption">Momento especial de la ceremonia inicial.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
 
-        <!-- ============================================================
-             SECCIÓN 2: SOCIAL PROJECT
-             ============================================================ -->
+        <!-- SECCIÓN 2: SOCIAL PROJECT -->
         <section id="tabSocial" class="tab-content">
-            
-            <!-- Vista 2A: Rejilla de Álbumes en Social Project -->
             <div id="gridSocial" class="albums-grid">
 
-                <!-- ÁLBUM EJEMPLO -->
+                <!-- ÁLBUM 2 -->
                 <article class="album-card" onclick="openAlbum('albumSocial1', 'gridSocial')">
                     <div class="album-cover-wrapper">
-                        <img src="https://i.postimg.cc/fRGB2Fn0/Whats-App-Image-2026-07-27-at-5-50-59-PM.jpg" class="album-cover" alt="Portada">
+                        <img src="https://i.postimg.cc/fRGB2Fn0/Whats-App-Image-2026-07-27-at-5-50-59-PM.jpg" class="album-cover" alt="Proyecto Social: Fase Inicial">
                     </div>
                     <div class="album-info">
-                        <h3 class="album-title">Fase 1: Planificación</h3>
-                        <p class="album-desc">Primeras actividades y organización comunitaria.</p>
+                        <h3 class="album-title">Proyecto Social: Fase Inicial</h3>
+                        <p class="album-desc">Registro del trabajo comunitario y reuniones de planificación del proyecto.</p>
                     </div>
                 </article>
 
             </div>
 
-            <!-- Vista 2B: Contenido Integrado del Álbum -->
+            <!-- Vista Interna del Álbum 2 -->
             <div id="albumSocial1" class="album-view">
                 <button class="btn-back" onclick="closeAlbum('albumSocial1', 'gridSocial')">← Volver a Álbumes</button>
                 <div class="album-view-header">
-                    <h2 class="album-view-title">Fase 1: Planificación</h2>
-                    <p class="album-view-desc">Resumen fotográfico de las mesas de trabajo.</p>
+                    <h2 class="album-view-title">Proyecto Social: Fase Inicial</h2>
+                    <p class="album-view-desc">Evidencias del trabajo de campo y actividades comunitarias.</p>
                 </div>
                 <div class="photos-grid">
                     <div class="photo-card">
-                        <img src="https://i.postimg.cc/fRGB2Fn0/Whats-App-Image-2026-07-27-at-5-50-59-PM.jpg" alt="Foto">
+                        <img src="https://i.postimg.cc/fRGB2Fn0/Whats-App-Image-2026-07-27-at-5-50-59-PM.jpg" alt="Foto de trabajo de campo">
                         <div class="photo-info">
-                            <p class="photo-caption">Reunión de preparación y logística.</p>
+                            <p class="photo-caption">Reunión de logística y organización de equipos.</p>
                         </div>
                     </div>
                 </div>
             </div>
-
         </section>
 
     </main>
@@ -521,14 +484,10 @@
         <p>&copy; 2026 Family PM4 generation XII. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- LÓGICA JAVASCRIPT DE NAVEGACIÓN Y ACCESO -->
     <script>
-        // Revisa si tu navegador ya te guardó como creador
-        window.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('pm4_admin') === 'true') {
-                desbloquearPagina();
-            }
-        });
+        // Limpiamos cualquier rastro de guardado previo en la computadora
+        localStorage.clear();
+        sessionStorage.clear();
 
         // Validar contraseña
         document.getElementById('accessForm').addEventListener('submit', function(event) {
@@ -536,20 +495,11 @@
             const inputPassword = document.getElementById('password').value;
 
             if (inputPassword === 'PM4 always the best') {
-                guardarYDesbloquear();
+                desbloquearPagina();
             } else {
                 document.getElementById('errorMsg').style.display = 'block';
             }
         });
-
-        function saltarClave() {
-            guardarYDesbloquear();
-        }
-
-        function guardarYDesbloquear() {
-            localStorage.setItem('pm4_admin', 'true');
-            desbloquearPagina();
-        }
 
         function desbloquearPagina() {
             document.getElementById('errorMsg').style.display = 'none';
@@ -557,7 +507,6 @@
             document.getElementById('contentContainer').style.display = 'block';
         }
 
-        // Cambio de pestañas principales (Memories / Social Project)
         function switchTab(tabName) {
             const tabMemories = document.getElementById('tabMemories');
             const tabSocial = document.getElementById('tabSocial');
@@ -577,14 +526,12 @@
             }
         }
 
-        // Abrir un Álbum en la misma vista (Transición fluida)
         function openAlbum(albumId, gridId) {
             document.getElementById(gridId).style.display = 'none';
             document.getElementById(albumId).style.display = 'block';
             window.scrollTo({ top: 300, behavior: 'smooth' });
         }
 
-        // Cerrar el Álbum y volver a la rejilla principal
         function closeAlbum(albumId, gridId) {
             document.getElementById(albumId).style.display = 'none';
             document.getElementById(gridId).style.display = 'grid';
